@@ -3697,6 +3697,8 @@ MonoBehaviour:
   curr: 0
   firstLocked: 0
   dumpa: {fileID: 919132148753001101}
+  audioSource: {fileID: 1325082011}
+  dumpaEnter: {fileID: 8300000, guid: 29f40840b86239a4db027bdce407bd5b, type: 3}
 --- !u!1 &799396504
 GameObject:
   m_ObjectHideFlags: 0

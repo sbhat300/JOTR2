@@ -55,7 +55,7 @@ public class JaiNavMesh : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(Random.Range(10, 15));
-            jaiClips.clip =  sounds[Random.Range(0,3)];
+            jaiClips.clip = sounds[Random.Range(0,3)];
             jaiClips.Play();
         }
     }

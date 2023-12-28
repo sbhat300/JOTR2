@@ -13,6 +13,8 @@ public class LockScript : MonoBehaviour
     public bool firstLocked;
     [SerializeField] GameObject dumpa;
     ColorGrading colorGrading;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip dumpaEnter;
     public void SetNewLocation() 
     {
         int newDoor = Random.Range(0, 7);
@@ -64,6 +66,7 @@ public class LockScript : MonoBehaviour
             colorGrading.mixerRedOutRedIn.value = 200;
             doors[curr].enabled = false;
             StopCoroutine(currentAudio);
+            audioSource.PlayOneShot(dumpaEnter);
             this.enabled = false;
         }
     }
