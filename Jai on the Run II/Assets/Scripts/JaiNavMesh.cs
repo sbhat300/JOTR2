@@ -10,6 +10,8 @@ public class JaiNavMesh : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public bool stunned;
     public AudioSource audioSource;
+    public AudioSource jaiClips;
+    public AudioClip[] sounds;
     public float speed;
     public bool firstFlash;
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class JaiNavMesh : MonoBehaviour
     }
     void Start()
     {
+        StartCoroutine(PlaySound());
         stunned = false;
         firstFlash = false;
         if(SceneManager.GetActiveScene().name != "Tut")
@@ -46,5 +49,14 @@ public class JaiNavMesh : MonoBehaviour
         yield return new WaitForSeconds(5);
         audioSource.Play();
         stunned = false;
+    }
+    IEnumerator PlaySound()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(Random.Range(10, 15));
+            jaiClips.clip =  sounds[Random.Range(0,3)];
+            jaiClips.Play();
+        }
     }
 }
